@@ -63,7 +63,7 @@ class WordPage:
 
         # Save the audio files
         try:
-            csv_index = list(pd.read_csv(CSV_INDEX).as_matrix())
+            csv_index = list(pd.read_csv(CSV_INDEX, header=None).as_matrix())
         except pd.errors.EmptyDataError:
             csv_index = []
         for word_url in self.words_urls:
