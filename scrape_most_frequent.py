@@ -24,15 +24,7 @@ BASE_AUDIO_URL = "https://audio00.forvo.com/audios/mp3/{}"
 
 
 # Create the scrapped content directory if not exists
-try:
-    os.mkdir('./scrapped/')
-except FileExistsError:
-    pass
-
-try:
-    os.mkdir('./scrapped/{}/'.format(LANG))
-except FileExistsError:
-    pass
+os.makedirs(os.path.join("scrapped", LANG), exist_ok=True)
 
 Path(CSV_INDEX).touch()
 
